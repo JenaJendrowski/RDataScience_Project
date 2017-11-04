@@ -21,13 +21,11 @@ Nword <- read.csv(file = "Nword.csv", header = TRUE, stringsAsFactors = FALSE)
 
 NWordHate<-subset(Nword, Hate==1)
 
-NewNword=select(NWordHate, latitude, longitude, Hate)
-edit(NewNword)
 
 
 usa <- map_data("usa")
 ggplot() + geom_polygon(data = usa, aes(x=long, y = lat, group = group)) + 
-  geom_point(data=NewNword, aes(x=longitude, y=latitude), color="red", size = .2) +
+  geom_point(data=NWordHate, aes(x=longitude, y=latitude), color="red", size = .2) +
   coord_fixed(1.3)
 ```
 
