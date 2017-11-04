@@ -11,7 +11,7 @@ Historically, hate-groups were prominent in communities with white majority popu
 
 # The Big Question
 
-Which material conditions are relevant to producing raciest rhetoric on Twitter? (Income, interracial marriage, employment, education)  What are the demographics of the geographic area surrounding online hate-speech activists, compared to the demographics of hate-groups existing in the material environment?
+Which material conditions are relevant to producing raciest rhetoric on Twitter? (Income, education attainment)  What are the demographics of the geographic area surrounding online hate-speech activists, compared to the demographics of hate-groups existing in the material environment?
 
 # Methodology
 
@@ -41,25 +41,6 @@ library(tidyverse)
 ```
 
 
-
-```{r, warning=F} 
-## define which species to query
-sp='Turdus migratorius'
-
-## run the query and convert to data.frame()
-d = occ(query=sp, from='ebird',limit = 100) %>% occ2df()
-```
-This can take a few seconds.
-
-```{r, fig.width=6, fig.height=3, fig.cap="Map illustrating the known occurrence locations"}
-# Load coastline
-map=map_data("world")
-
-ggplot(d,aes(x=longitude,y=latitude))+
-  geom_polygon(aes(x=long,y=lat,group=group),data=map)+
-  geom_point(col="red")+
-  coord_equal()
-```
 
 
 # Results
